@@ -393,54 +393,8 @@ public class HttpClientUtil2 {
         }
         return result;
 
-//	    try {
-//            HttpClient httpClient = new HttpClient();
-//            httpClient.getParams().setContentCharset(charset);
-//            httpClient.getParams().setConnectionManagerTimeout(timer);
-//            method.getParams().setParameter(HttpMethodParams.SO_TIMEOUT, timer);
-//            method.setRequestHeader("ContentType",ContentType+";charset="+charset);
-//            method.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, charset);
-//
-//            //增加头参数
-//            if(header!=null && header.size()>0){
-//                for (Entry<String, String> entry : header.entrySet()) {
-//                    method.setRequestHeader(entry.getKey(), entry.getValue());
-//                }
-//            }
-//            if(param!=null && param.size()>0){
-//                //请求信息封装
-//                NameValuePair[] data = new NameValuePair[param.size()];
-//                Iterator<Entry<String, String>> iter = param.entrySet().iterator();
-//                int i=0;
-//                while(iter.hasNext()){
-//                    Entry<String, String> entry = iter.next();
-//                    data[i] = new NameValuePair(entry.getKey(), entry.getValue());
-//                    i++;
-//                }
-//                log.info("********"+data.toString()+"******");
-//                if(type.equals(GET)){
-//                    method.setQueryString(data);
-//                }else{
-//                    PostMethod postMethod = (PostMethod)method;
-//                    postMethod.setRequestBody(data);
-//                }
-//
-//            }
-//            int count = httpClient.executeMethod(method);
-//            String submitResult = IOUtils.toString(method.getResponseBodyAsStream(), charset);
-//            return submitResult;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            log.info("错误了", e);
-//            log.info("错误了"+getRequestString(url,param), e);
-//            log.info("HTTPClient请求错误：Exception："+IBUUtil.getErrorInfoFromException(e));
-//        } finally{
-//            method.releaseConnection();
-//        }
-//        return null;
     }
 
-    ///////
 
 
     private static Map<String, String> execute(String url, HttpMethodBase method, Map<String, String> header, Map<String, String> param, String charset, String type, Integer timer) {
