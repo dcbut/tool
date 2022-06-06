@@ -14,6 +14,6 @@
   * json json方法类
   * md5 md5加密方法类
   * redis redis方法类
-  * 
-  * 
+  * sha1 sha1方法类
+  * Verify 验证码方法类
   * 
