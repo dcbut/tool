@@ -71,13 +71,13 @@ public class DeleteFileUtil {
         for (int i = 0; i < files.length; i++) {
             // 删除子文件
             if (files[i].isFile()) {
-                flag = DeleteFileUtil.deleteFile(files[i].getAbsolutePath());
+                flag = deleteFile(files[i].getAbsolutePath());
                 if (!flag)
                     break;
             }
             // 删除子目录
             else if (files[i].isDirectory()) {
-                flag = DeleteFileUtil.deleteDirectory(files[i]
+                flag = deleteDirectory(files[i]
                         .getAbsolutePath());
                 if (!flag)
                     break;
