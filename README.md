@@ -9,6 +9,7 @@
   * date 日期方法类
   * email 邮件方法类
   * file 文件方法类
+  * http http方法类
   * ip IP方法类
   * json json方法类
   * md5 md5加密方法类
