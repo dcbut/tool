@@ -11,10 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+
 /**
- * Commons
+ * <p>Title: 常用字符串操作类</p>
+ * <p>Description: 完成一些对字符串的计算工作</p>
  *
- *
+ * @version 1.0.0
  */
 public class Commons {
 
@@ -143,7 +145,7 @@ public class Commons {
         URL url = null;
         try {
             url = new URL(path);
-//            url = new URL("http://117.131.51.153:18416/2018/8/29/EVB3721535533706682.jpg");
+//            url = new URL("http://127.0.0.1:18080/2018/8/29/EVB3721535533706682.jpg");
             URLConnection connection = url.openConnection();
             connection.setDoOutput(true);
             long fileSize = connection.getContentLength();

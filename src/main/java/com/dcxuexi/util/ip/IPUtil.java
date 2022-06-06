@@ -4,7 +4,12 @@ package com.dcxuexi.util.ip;
 import javax.servlet.http.HttpServletRequest;
 
 
-
+/**
+ * <p>Title: IP操作类</p>
+ * <p>Description: 完成一些对IP操作的工作</p>
+ *
+ * @version 1.0.0
+ */
 public class IPUtil {
 	
 	public static final String hostIP6 = "0:0:0:0:0:0:0:1";

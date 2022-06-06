@@ -16,7 +16,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created with Intellij IDEA
+ * <p>Title: Json操作类</p>
+ * <p>Description: 完成一些对Json操作的工作</p>
+ *
+ * @version 1.0.0
  */
 public class JsonUtil {
     private static ObjectMapper mapper = new ObjectMapper();

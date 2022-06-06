@@ -25,8 +25,8 @@ public class HttpClientUtilTest {
         String huarenmaCallBack = "";//华人码的链接  taskId,transcodingUrl
         Map<String, String> maps = new HashMap<String, String>();
         maps.put("taskid", "039a741900bc409b90732177dcf5e2de");
-        maps.put("transcodingUrl", "http://mgcdn.vod.migucloud.com/vi1/222.0Ko0xpwUJaA80jiNDrImB.4.VxGzqA.mp4");
-        String map = "taskid=039a741900bc409b90732177dcf5e2de&transcodingUrl=http://mgcdn.vod.migucloud.com/vi1/222.0Ko0xpwUJaA80jiNDrImB.4.VxGzqA.mp4";
+        maps.put("transcodingUrl", "http:/xxxxxxx.com/vi1/222.0Ko0xpwUJaA80jiNDrImB.4.VxGzqA.mp4");
+        String map = "taskid=039a741900bc409b90732177dcf5e2de&transcodingUrl=http://xxxxxx.com/vi1/222.0Ko0xpwUJaA80jiNDrImB.4.VxGzqA.mp4";
         System.out.println(maps + "请求入参");
         String string = hcu.sendHttpPost(huarenmaCallBack, maps);
         System.out.println("请求出参:" + string);
@@ -41,8 +41,8 @@ public class HttpClientUtilTest {
             // 定义数据分隔线
             String BOUNDARY = "========7d4a6d158c9";
             // 服务器的域名
-            URL url = new URL("http://localhost:8080?heheheh");
-//            URL url2 =new URL(null,"http://localhost:8080?heheheh",new sun.net.www.protocol.http.Handler());
+            URL url = new URL("http://localhost:8080?uploadFiletest");
+//            URL url2 =new URL(null,"http://localhost:8080?uploadFiletest",new sun.net.www.protocol.http.Handler());
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             // 设置为POST情
             conn.setRequestMethod("POST");
@@ -122,7 +122,6 @@ public class HttpClientUtilTest {
             MultipartEntity reqEntity = new MultipartEntity();
 
             FileBody bin = new FileBody(new File("/var/root/Desktop/logs/error.log"));
-//            FileBody bin1 = new FileBody(new File("C:/Users/kin.liufu.2GOTECH/Desktop/资料/Go.XML Message Protocol Specification (V2.88h).doc"));
             StringBody comment = new StringBody("房子类型为三房一厅", charset);
             ArrayList<FileBody> fileBodys = new ArrayList<FileBody>();
             fileBodys.add(bin);

@@ -2,8 +2,12 @@ package com.dcxuexi.util.file;
 
 import java.io.File;
 
+
 /**
- * 删除文件和目录
+ * <p>Title: 删除文件和目录类</p>
+ * <p>Description: 完成一些对删除文件和目录的工作</p>
+ *
+ * @version 1.0.0
  */
 public class DeleteFileUtil {
 
@@ -96,7 +100,6 @@ public class DeleteFileUtil {
             return false;
         }
     }
-
 
 
 }

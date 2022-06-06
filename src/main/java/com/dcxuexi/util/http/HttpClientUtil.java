@@ -38,7 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * <p>Title: HttpClient请求类</p>
+ * <p>Description: 完成一些对HttpClient请求的工作</p>
+ *
+ * @version 1.0.0
+ */
 public class HttpClientUtil {
     private final static Logger logger = LoggerFactory.getLogger(HttpClientUtil.class);
     private RequestConfig requestConfig = RequestConfig.custom()

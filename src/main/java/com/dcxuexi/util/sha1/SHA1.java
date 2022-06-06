@@ -5,8 +5,12 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+
 /**
- * 加密类
+ * <p>Title: SHA1加密类</p>
+ * <p>Description: 完成一些对SHA1加密的工作</p>
+ *
+ * @version 1.0.0
  */
 public class SHA1 {
 

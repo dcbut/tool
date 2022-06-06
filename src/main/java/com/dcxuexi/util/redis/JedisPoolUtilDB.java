@@ -6,6 +6,13 @@ import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.*;
 
+
+/**
+ * <p>Title: JedisPool操作类</p>
+ * <p>Description: 完成一些对redis的工作</p>
+ *
+ * @version 1.0.0
+ */
 public class JedisPoolUtilDB {
 
     private static final String REDIS_HOST = RedisPropertiesUtil.getProperty("redis.host");

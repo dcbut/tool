@@ -4,6 +4,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
+/**
+ * <p>Title: MD5加密类</p>
+ * <p>Description: 完成一些对MD5加密的工作</p>
+ *
+ * @version 1.0.0
+ */
 public class MD5 {
     public static String digest(String inString) {
         String outString = null;

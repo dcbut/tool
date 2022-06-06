@@ -10,9 +10,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+
 /**
- * Redis
+ * <p>Title: Redis操作类</p>
+ * <p>Description: 完成一些对Redis的工作</p>
  *
+ * @version 1.0.0
  */
 //@Repository
 public class RedisUtil {

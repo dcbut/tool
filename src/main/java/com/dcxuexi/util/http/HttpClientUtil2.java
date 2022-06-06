@@ -26,7 +26,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * HttpClient请求工具
+ * <p>Title: HttpClient请求类</p>
+ * <p>Description: 完成一些对HttpClient请求的工作</p>
+ *
+ * @version 1.0.0
  */
 public class HttpClientUtil2 {
     private static Log log = LogFactory.getLog(HttpClientUtil.class);
@@ -187,7 +190,7 @@ public class HttpClientUtil2 {
             return submitResult;
         } catch (Exception e) {
             log.error("HTTPClient请求URL地址:" + url + ",请求参数[" + content + "]", e);
-            log.info("HTTPClient请求错误：Exception：" + IBUUtil.getErrorInfoFromException(e));
+            log.info("HTTPClient请求错误：Exception：" + ErrorUtil.getErrorInfoFromException(e));
         }
         return null;
     }
@@ -230,7 +233,7 @@ public class HttpClientUtil2 {
             return map;
         } catch (Exception e) {
             log.error("HTTPClient请求URL地址:" + url + ",请求参数[" + content + "]", e);
-            log.info("HTTPClient请求错误：Exception：" + IBUUtil.getErrorInfoFromException(e));
+            log.info("HTTPClient请求错误：Exception：" + ErrorUtil.getErrorInfoFromException(e));
         }
         return map;
     }
@@ -254,7 +257,7 @@ public class HttpClientUtil2 {
             return submitResult;
         } catch (Exception e) {
             log.error("HTTPClient请求URL地址:" + url + ",请求参数[" + content + "]", e);
-            log.info("HTTPClient请求错误：Exception：" + IBUUtil.getErrorInfoFromException(e));
+            log.info("HTTPClient请求错误：Exception：" + ErrorUtil.getErrorInfoFromException(e));
         }
         return null;
     }
@@ -317,7 +320,7 @@ public class HttpClientUtil2 {
             e.printStackTrace();
             log.info("错误了", e);
             log.info("错误了" + getRequestString(url, param), e);
-            log.info("HTTPClient请求错误：Exception：" + IBUUtil.getErrorInfoFromException(e));
+            log.info("HTTPClient请求错误：Exception：" + ErrorUtil.getErrorInfoFromException(e));
         } finally {
             method.releaseConnection();
         }
@@ -537,7 +540,7 @@ public class HttpClientUtil2 {
         } catch (Exception e) {
             e.printStackTrace();
             log.info(getRequestString(url, param), e);
-            log.info("HTTPClient请求错误：Exception：" + IBUUtil.getErrorInfoFromException(e));
+            log.info("HTTPClient请求错误：Exception：" + ErrorUtil.getErrorInfoFromException(e));
         } finally {
             method.releaseConnection();
         }

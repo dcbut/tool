@@ -11,8 +11,7 @@ import java.security.cert.X509Certificate;
 /**
  * 自定义签名证书管理类 (接受任意来源证书)
  *
- * @author Creator
- * @version 2.0
+ * @version 1.0.0
  * @since jdk 1.6
  */
 public class MyX509TrustManager implements X509TrustManager {

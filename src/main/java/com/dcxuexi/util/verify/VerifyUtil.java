@@ -8,9 +8,12 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Random;
 
+
 /**
- * @Verify
- *验证码字符集
+ * <p>Title: 验证码类</p>
+ * <p>Description: 完成一些对验证码的工作</p>
+ *
+ * @version 1.0.0
  */
 public class VerifyUtil {
     // 验证码字符集

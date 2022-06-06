@@ -18,6 +18,12 @@ import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * <p>Title: HttpsClient请求类</p>
+ * <p>Description: 完成一些对HttpsClient请求的工作</p>
+ *
+ * @version 1.0.0
+ */
 public class HttpsClientUtil {
 	private static Log log   = LogFactory.getLog(HttpClientUtil.class);
 	private static final int TIMEOUT =  180000;

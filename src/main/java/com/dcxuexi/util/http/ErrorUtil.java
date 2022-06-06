@@ -6,11 +6,18 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Random;
 
-public class IBUUtil {
+
+
+/**
+ * <p>Title: 将异常转成字符串 输出，方便打印</p>
+ * <p>Description: 完成一些对异常转成字符串的工作</p>
+ *
+ * @version 1.0.0
+ */
+public class ErrorUtil {
 	  /**
 		 * 将异常转成字符串 输出，方便打印
-		 * @auther husy
-		 * @date 2017年1月4日下午2:52:23
+		 * @date
 		 * @param e
 		 * @return
 		 */
