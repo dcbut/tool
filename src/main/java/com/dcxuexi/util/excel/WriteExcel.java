@@ -23,60 +23,6 @@ import java.util.List;
  */
 public class WriteExcel {
 
-    private static final String path1="C:\\java\\test3.xlsx";
-
-    private static void writeExcel(String str) throws FileNotFoundException, IOException {
-        File file=new File(str);
-        // HSSFWorkbook 2003的excel .xls,XSSFWorkbook导入2007的excel   .xlsx
-//      HSSFWorkbook workbook=new HSSFWorkbook(new FileInputStream(new File(file)));
-//        XSSFWorkbook workbook=new XSSFWorkbook(new FileInputStream(file));
-        XSSFWorkbook workbook=new XSSFWorkbook();
-        List resultList =new ArrayList<>();
-
-        Sheet sheet1 = workbook.createSheet("文档01");//创建 sheet 对象
-        Row row0 = sheet1.createRow(0);//第一行，标题
-        CellRangeAddress cra=new CellRangeAddress(0, 0, 0, 4); //合并单元格
-        sheet1.addMergedRegion(cra);
-        Cell row0Cell = row0.createCell(0);
-        row0Cell.setCellValue("文档标题");
-
-
-        Row row = sheet1.createRow(1);//第一行，标题
-        row.createCell(0).setCellValue("A");
-        row.createCell(1).setCellValue("B");
-        row.createCell(2).setCellValue("C");
-        row.createCell(3).setCellValue("D");
-        row.createCell(4).setCellValue("E");
-        //拼接数据
-        for(int i=1;i<=10;i++){
-            JSONObject json1=new JSONObject();
-            json1.put("A", i);
-            json1.put("B", i*2);
-            json1.put("C", i*3);
-            json1.put("D", i*4);
-            json1.put("E", i*5);
-            resultList.add(json1);
-        }
-        System.out.println("resultList:"+resultList);
-        Row row1;
-        for (int i = 1, len = resultList.size(); i <=len; i++) {//循环创建数据行
-            //因为第一行已经设置了，所以从第二行开始
-            row1 = sheet1.createRow(i+1);
-            JSONObject json=(JSONObject) resultList.get(i-1);
-            row1.createCell(0).setCellValue(json.getString("A"));
-            row1.createCell(1).setCellValue(json.getString("B"));
-            row1.createCell(2).setCellValue(json.getString("C"));
-            row1.createCell(3).setCellValue(json.getString("D"));
-            row1.createCell(4).setCellValue(json.getString("E"));
-        }
-        FileOutputStream fos = new FileOutputStream(path1);
-        workbook.write(fos);//写文件
-        fos.close();
-        System.out.println("写入成功！");
-    }
-
-
-
     private static void write(List<User> list,String filePath) throws IOException {
         // 创建一个工作簿
         XSSFWorkbook workbook = new XSSFWorkbook();
