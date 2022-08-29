@@ -13,6 +13,16 @@ public class User {
     private String email;
     private String branchName;
 
+    public User() {
+    }
+
+    public User(Integer userId, String userName, String email, String branchName) {
+        this.userId = userId;
+        this.userName = userName;
+        this.email = email;
+        this.branchName = branchName;
+    }
+
     public Integer getUserId() {
         return userId;
     }
