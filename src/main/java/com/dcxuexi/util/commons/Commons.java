@@ -78,7 +78,7 @@ public class Commons {
      */
     public static String getIdentifier(){
         long curr = System.currentTimeMillis();
-        String random = generateMixed(3)+curr+generateMixed(3);
+        String random = generateMixed(6)+curr+generateMixed(6);
         return random.toLowerCase();
     }
 
@@ -93,47 +93,6 @@ public class Commons {
         return random;
     }
 
-    /**
-     * 通过文件路径直接修改文件名
-     * @param filePath 需要修改的文件的完整路径
-     * @param newFileName 需要修改的文件的名称
-     * @return
-     */
-    public static String newFileName(String filePath, String newFileName) {
-        File f = new File(filePath);
-        // 判断原文件是否存在
-        if (!f.exists()) {
-            return null;
-        }
-
-        newFileName = newFileName.trim();
-        // 文件名不能为空
-        if ("".equals(newFileName) || newFileName == null)
-            return null;
-
-        String newFilePath = null;
-        // 判断是否为文件夹
-        if (f.isDirectory()) {
-            newFilePath = filePath.substring(0, filePath.lastIndexOf("/")) + "/" + newFileName;
-        } else {
-            newFilePath = filePath.substring(0, filePath.lastIndexOf("/"))+ "/"  + newFileName + filePath.substring(filePath.lastIndexOf("."));
-        }
-        File nf = new File(newFilePath);
-        // 判断需要修改为的文件是否存在（防止文件名冲突）
-        if (!f.exists()) {
-            return null;
-        }
-
-        try {
-            // 修改文件名
-            f.renameTo(nf);
-        } catch(Exception err) {
-            err.printStackTrace();
-            return null;
-        }
-
-        return newFilePath;
-    }
 
     /**
      * 获取图片分辨率及文件大小
