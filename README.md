@@ -16,4 +16,5 @@
   * redis redis方法类
   * sha1 sha1方法类
   * Verify 验证码方法类
+  * easyExcel Excel文件读、写、接口WEB
   * 
