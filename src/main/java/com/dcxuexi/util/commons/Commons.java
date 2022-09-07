@@ -115,9 +115,6 @@ public class Commons {
             map.put("width",srcWidth);
             map.put("height",srcHeight);
             map.put("size",size);
-            System.out.println("srcWidth = " + srcWidth);
-            System.out.println("=============size = " + size);
-            System.out.println("srcHeight = " + srcHeight);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -39,7 +39,8 @@ public class CommonsTest {
 
         // 方法二：获取图片分辨率及文件大小
         //String imagePath = "C:\\java\\data\\diugai.com165312754993654.png";
-        String imagePath = "https://img2022.cnblogs.com/blog/35695/202209/35695-20220901164517964-141149333.png";
+        //String imagePath = "https://img2022.cnblogs.com/blog/35695/202209/35695-20220901164517964-141149333.png";
+        String imagePath = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png";
         Map<String, Object> image = Commons.getImage(imagePath);
         System.out.println("width = " + image.get("width"));
         System.out.println("height = " + image.get("height"));
