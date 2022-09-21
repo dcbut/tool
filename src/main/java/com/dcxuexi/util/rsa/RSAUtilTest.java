@@ -1,6 +1,5 @@
-package com.dcxuexi.util.rsaCipher;
+package com.dcxuexi.util.rsa;
 
-import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 import java.util.Random;
 

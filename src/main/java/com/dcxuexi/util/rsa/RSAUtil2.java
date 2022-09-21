@@ -1,4 +1,4 @@
-package com.dcxuexi.util.rsaCipher;
+package com.dcxuexi.util.rsa;
 
 import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;

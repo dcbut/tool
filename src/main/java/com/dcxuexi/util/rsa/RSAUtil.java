@@ -1,4 +1,4 @@
-package com.dcxuexi.util.rsaCipher;
+package com.dcxuexi.util.rsa;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
