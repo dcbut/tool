@@ -23,7 +23,7 @@ public class CommonsTest {
     public static void main(String[] args) {
 
         // 方法一：产生一个给定长度的数字字串
-        System.out.println("数字字符串=" + Commons.generate(8));
+        System.out.println("数字字符串=" + Commons.generate(50));
 
         // 方法二：产生一个给定长度的数字及字母字符串
         System.out.println("数字及字母字符串=" + Commons.generateMixed(8));
