@@ -23,8 +23,8 @@ public class RSAUtilTest {
 
         System.out.println("=======================================================");
 
-        String data = "url=http://127.0.0.1/ba/fanruan?op=view&usernem=admin&uuid=2839832837829";
-
+        String data = "url=http://127.0.0.1/ba/fa633333333333333333333333333335ffffffffffffffffffffhhhhhhhhhhhhhhhhhhhhhhsssssssssssss66666666633333333333333333333333333333333333333333332222222222222222222222222222222222266666666666666666666666666666nruanfgfg222226666666666666666666666666666666666666666666666666666666666666666666666622222222225555555555555555555555555555555555555555555555555555555555555555555555555555222222222222222222222222222222222222222222222222222222222223fgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggssdsgsdg?op=view&usernem=admin&uuid=2839832837829";
+        System.out.println(data.length());
         // 数字签名 加密
         String encryptStr = RSAUtil.encryptByPrivateKey(data, privateKey);
         System.out.println("私钥加密后 ===> " + encryptStr);

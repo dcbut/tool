@@ -1,13 +1,17 @@
 package com.dcxuexi.util.rsa;
 
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
+
 import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.Charset;
 import java.security.*;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.*;
-
 
 /***
  * @Title RSAUtil2
@@ -17,6 +21,9 @@ import java.util.*;
  * @Version 1.0.0
  */
 public class RSAUtil2 {
+
+    public static BASE64Encoder base64Encoder = new BASE64Encoder();
+    public static BASE64Decoder base64Decoder = new BASE64Decoder();
 
     public static final String SIGN_ALGORITHMS = "SHA256WithRSA";
     public static final Charset DEFAULT_CHARSET = Charset.forName("UTF-8");
@@ -247,7 +254,7 @@ public class RSAUtil2 {
 
 
     public static void main(String[] args) throws Exception {
-        String content = "asdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsadadiugtiutujjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkka";
+        String content = "asdhaoddddddsdhaosdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsadsdhaoddddddaosdjosadosaudosaudaosdusadadsadsadsadasdasdasdasdsadsadsadasdasdasdsadasdsadasdsadsadadsaddasdasdasdsadasdsadasdsadsadadsadsadadiugtiutujjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkka";
         // 公钥216
         String publicKey ="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCCaGn5+Yq9o7kxmDS2zwIREIEkcpKbx44uPT/PX22XOjgzkMvbCEamu7KyatNhkrrSH6E14l1F739WztXffJ/OCXUmgF4egMedyGCA8ymZWbzyhwnZcywa8me8S2rjb3gkCD6VFq8BSPJx9vaMvlR7eZxe1O5lllaV6tE6SlNY7QIDAQAB";
         //私钥844
@@ -265,9 +272,23 @@ public class RSAUtil2 {
                         "qBOEqBuRq9W7vrBlHbqEk1EXu2MfeRLZWljZn6uoyedJCdSh+6neUUvqHDGi3DNdss/ByWHI9e+9" +
                         "zOXTURmMaQ==";
 
+        Map<String, String> keyPairMap = RSAUtil.generateKeyPair();
+        String publicKey2=  keyPairMap.get("publicKey");
+        String privateKey2=  keyPairMap.get("privateKey");
+        System.out.println("publicKey ===> " + publicKey);
+        System.out.println(publicKey.length());
+        System.out.println("privateKey ===> " + privateKey);
+        System.out.println(privateKey.length());
+
+        System.out.println("公钥: \n\r" + publicKey2);
+        System.out.println("私钥： \n\r" + privateKey2);
+
+        System.out.println("=======================================================");
 
 
-        String s = publicEncrpyt(content, publicKey);
+
+        System.out.println(content.length());
+        String s = publicEncrpyt(content, publicKey2);
         System.out.println("公钥加密后"+s);
 
 
@@ -275,7 +296,7 @@ public class RSAUtil2 {
 
 
 
-        String s1 = privateDecrypt(s, privateKey);
+        String s1 = privateDecrypt(s, privateKey2);
         System.out.println("解密后"+s1 );
 
 
